@@ -1,3 +1,5 @@
+// var faker = require('faker');
+
 var cardTemplate = function (name, email, city, state) {
   return `
     <div class="col">
@@ -17,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
   btn.addEventListener('click', function () {
   	var cards = document.querySelector('#cards')
     // Instead of hardcoding the values, randomly generate them using faker.js!
-    var name = 'EXAMPLE EXAMPLE'
-    var email = 'example@example.com'
-    var city = 'Example'
-    var state = 'EX'
+    var name = faker.name.findName()
+    var email = faker.internet.email()
+    var city = faker.address.city()
+    var state = faker.address.stateAbbr()
 
 		cards.innerHTML = cardTemplate(name, email, city, state)
   })
